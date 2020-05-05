@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="education-delete">
+  <header class="page-header d-flex">
+    <h3 class="page-heading text-muted">Конфиденциальная зона</h3>
+  </header>
+  <hr>
+  <div class="card border-danger">
+    <div class="card-header">
+      <h4><a style="text-decoration: none;" href="{{edu.get_absolute_url}}">Образование {{edu.pk}}</a></h4>
+    </div>
+    <div class="card-body">
+      <p class="lead">Вы хотите удалить это образование?</p>
+      <form action="" method="POST"> {% csrf_token %}
+        <div class="btn-group">
+          <button type="submit" class="btn btn-danger">ДА</button>
+          <a href="{{edu.get_absolute_url}}" class="btn btn-dark">НЕТ</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}

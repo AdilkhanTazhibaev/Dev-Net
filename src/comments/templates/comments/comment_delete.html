@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="post-delete">
+  <h3 class="page-heading">Удалить комментарий</h3>
+  <div class="card">
+    <div class="card-header">
+      <h5>Are you sure? You wanna delete this comment?</h5>
+    </div>
+    <div class="card-body">
+      <form action="" method="POST"> {% csrf_token %}
+        <p class="card-text">{{comment.text}}</p>
+        <hr>
+        <button type="submit" class="btn btn-danger">Да</button>
+        <a href="{{comment.post.get_absolute_url}}" type="button" class="btn btn-dark">Нет</a>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="post-list">
+  <h3 class="page-heading">Изменить комментарий</h3>
+  <div class="card">
+    <div class="card-body">
+      <form action="" method="POST"> {% csrf_token %}
+        <div class="form-group">
+          {{form | crispy}}
+        </div>
+        <button type="submit" class="btn btn-lg btn-success">Изменить</button>
+        <a href="{{comment.post.get_absolute_url}}" type="button" class="btn btn-dark btn-lg">Отменить</a>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}

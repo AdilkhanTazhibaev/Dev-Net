@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="post-delete">
+  <h3 class="page-heading">Удалить пост</h3>
+  <div class="card">
+    <div class="card-header">
+      <h5>Вы уверены? Вы хотите удалить этот пост?</h5>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">{{post.title}}</h4>
+      <p class="card-text">{{post.description}}</p>
+      <form action="" method="POST"> {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Да</button>
+        <a href="{{post.get_absolute_url}}" type="button" class="btn btn-dark">Нет</a>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}

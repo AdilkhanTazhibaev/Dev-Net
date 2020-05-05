@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="post-detail">
+  <h3 class="page-heading">Сообщение</h3>
+  <div class="card">
+    <div class="card-header text-center">
+      <h4 class="card-title m-0">{{post.title}}</h4>
+    </div>
+    <div class="card-body text-center">
+      <div class="card-left">
+        <p class="card-text">Описание: {{post.description}}</p>
+        <p class="card-text">Автор: {{post.owner}}</p>
+        <p class="card-text">Создан в: {{post.created_at}}</p>
+      </div>
+      <br>
+      <form action="" class="">
+        {% if user.is_authenticated %}
+        <a href="{{post.get_comment_create_url}}" type="button" class="btn btn-dark">Комментарий</a>
+        {% endif %}
+        {% if user.is_authenticated and post.owner == user %}
+        <a href="{{post.get_update_url}}" type="button" class="btn btn-info">Изменить</a>
+        <a href="{{post.get_delete_url}}" type="submit" class="btn btn-danger">Удалить</a>
+        {% endif %}
+      </form>
+    </div>
+    {% if post.comment_set.all %}
+    <div class="card-footer">
+      <div class="container">
+        <h5 class="m-0">Комментарии</h5>
+        <hr>
+        {% for comment in post.comment_set.all %}
+        <div class="mb-2 d-flex justify-content-between" >
+          <div>
+            <span class="">{{comment.text}}</span><br>
+            <small>{{comment.owner}}</small>
+          </div>
+          {% if comment.owner == user %}
+          <form action="" class="">
+            <a href="{{comment.get_update_url}}" class="btn btn-sm btn-outline-dark">Изменить</a>
+            <a href="{{comment.get_delete_url}}" class="btn btn-sm btn-danger">Удалить</a>
+          </form>
+          {% endif %}
+        </div>
+        <hr>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock content %}

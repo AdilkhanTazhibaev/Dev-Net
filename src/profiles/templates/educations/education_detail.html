@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="education-list">
+  <header class="page-header d-flex">
+    <h3 class="page-heading">Образование {{edu.pk}}</h3>
+    {% if user.is_authenticated and edu.profile == user.profile %}
+    <div class="btn-group">
+      <a href="{{edu.get_update_url}}" class="btn btn-outline-success">РЕДАКТИРОВАТЬ ОБРАЗОВАНИЕ</a>
+      <a href="{{edu.get_delete_url}}" class="btn btn-danger">УДАЛИТЬ ОБРАЗОВАНИЕ</a>
+    </div>
+    {% endif %}
+  </header>
+  <hr>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <strong>Колледж</strong>
+      <span class="float-right">{{edu.college}}</span>
+    </li>
+    <li class="list-group-item">
+      <strong>Степень</strong>
+      <span class="float-right">{{edu.degree}}</span>
+    </li>
+    <li class="list-group-item">
+      <strong>Началось в</strong>
+      <span class="float-right">{{edu.started_at}}</span>
+    </li>
+    {% if edu.is_currently_studying %}
+    <li class="list-group-item">
+      <strong>Текущий статус</strong>
+      <span class="float-right">Все еще учусь</span>
+    </li>
+    {% else %}
+    <li class="list-group-item">
+      <strong>Завершено в</strong>
+      <span class="float-right">{{edu.ended_at}}</span>
+    </li>
+    {% endif %}
+    <li class="list-group-item">
+      <p class="text-center lead text-muted">{{edu.created_at}}</p>
+    </li>
+  </ul>
+</div>
+{% endblock content %}
