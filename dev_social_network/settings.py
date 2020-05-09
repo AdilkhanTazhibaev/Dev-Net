@@ -11,7 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*sb(vdhrc#cy=06cr8ed99zh5sj@v*s#!$d!y_jxq)!n9z)w-f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['hackdevnet.herokuapp.com', '127.0.0.1']
 
