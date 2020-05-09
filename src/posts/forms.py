@@ -3,18 +3,14 @@ from .models import Post
 
 
 class PostForm(forms.ModelForm):
-  title = forms.CharField(
-    widget=forms.TextInput(
-      attrs={
+  title = forms.CharField(widget=forms.TextInput(attrs={
         'class': 'form-control form-control-lg',
         'placeholder': 'Введите заголовок'
       }
     )
   )
 
-  description = forms.CharField(
-    widget=forms.Textarea(
-      attrs={
+  description = forms.CharField(widget=forms.Textarea(attrs={
         'class': 'form-control form-control-lg',
         'placeholder': 'Введите описание',
         'rows': 3

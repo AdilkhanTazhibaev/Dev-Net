@@ -6,9 +6,7 @@ User = get_user_model()
 
 
 class RegisterForm(forms.ModelForm):
-  email = forms.EmailField(
-    widget=forms.EmailInput(
-      attrs={
+  email = forms.EmailField(widget=forms.EmailInput(attrs={
         'class': 'form-control form-control-lg',
         'placeholder': 'Введите Email'
       }
@@ -20,20 +18,14 @@ class RegisterForm(forms.ModelForm):
     self.fields['password2'].label = "Подтвердите Пароль"
 
 
-  password1 = forms.CharField(
-    label='Password',
-    widget=forms.PasswordInput(
-      attrs={
+  password1 = forms.CharField(label='Password',widget=forms.PasswordInput(attrs={
         'class': 'form-control form-control-lg',
         'placeholder': 'Введите Пароль'
       }
     )
   )
 
-  password2 = forms.CharField(
-    label='Confirm Password',
-    widget=forms.PasswordInput(
-      attrs={
+  password2 = forms.CharField(label='Confirm Password',widget=forms.PasswordInput(attrs={
         'class': 'form-control form-control-lg',
         'placeholder': 'Подтвердите Пароль'
       }
