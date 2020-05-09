@@ -44,7 +44,7 @@ class LoginView(View):
     if form.is_valid():
       user = form.cleaned_data.get('user_obj')
       login(request, user)
-      messages.success(request, 'Ура! Вы только что вошли в систему!')
+      messages.success(request, 'Ура!!! Вы только что вошли в систему!')
       return redirect(reverse('pages:dashboard-view'))
     self.context['title'] = 'Login'
     self.context['form'] = form
