@@ -132,8 +132,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-STATIC_ROOT = os.path.join(STATIC_ENV_ROOT, 'static')
-MEDIA_ROOT = os.path.join(STATIC_ENV_ROOT, 'media')
+STATIC_ENV_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_env')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
 
+STATIC_ROOT = os.path.join(STATIC_ENV_ROOT, 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures')
+MEDIA_URL = '/pictures/'
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
