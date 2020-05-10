@@ -152,6 +152,7 @@ class ProfileForm(forms.ModelForm):
     self.fields['location'].label = "Место проживания"
     self.fields['skills'].label = "Навык"
     self.fields['bio'].label = "О себе"
+    self.fields['image'].label = "Изображение"
 
   class Meta:
     model = Profile
