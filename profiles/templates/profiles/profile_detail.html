@@ -22,6 +22,26 @@
       <div class="btn-group d-block">
         <a href="{{profile.get_experience_url}}" class="btn btn-outline-primary">ОПЫТ</a>
         <a href="{{profile.get_education_url}}" class="btn btn-dark">ОБРАЗОВАНИЯ</a>
+       {% if profile.experience %}
+        <a href="{{profile.get_experience_url}}" class="btn btn-outline-primary">ОПЫТ</a>
+        {% else %}
+        {% if user.is_authenticated and profile.user == user %}
+        <a href="{{profile.get_experience_url}}" class="btn btn-outline-primary">ОПЫТ</a>
+        {% endif %}
+        {% endif %}
+
+
+        {% if profile.education %}
+        <a href="{{profile.get_education_url}}" class="btn btn-dark">ОБРАЗОВАНИЯ</a>
+        {% else %}
+        {% if user.is_authenticated and profile.user == user %}
+        <a href="{{profile.get_education_url}}" class="btn btn-dark">ОБРАЗОВАНИЯ</a>
+        {% endif %}
+        {% endif %}
+  
+
+
+
         {% if profile.social %}
         <a href="{{profile.social.get_absolute_url}}" class="btn btn-outline-info">СОЦИАЛЬНАЯ СТРАНИЦА</a>
         {% else %}
