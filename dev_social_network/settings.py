@@ -128,12 +128,15 @@ LOGIN_URL = '/dev/accounts/login'
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 
-STATIC_ENV_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_env')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [STATIC_DIR]
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures')
+MEDIA_URL = '/pictures/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-
-STATIC_ROOT = os.path.join(STATIC_ENV_ROOT, 'static')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures')
-MEDIA_URL = '/pictures/'
-STATIC_URL = '/static/'
