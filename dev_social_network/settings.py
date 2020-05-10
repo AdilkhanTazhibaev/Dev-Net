@@ -127,10 +127,6 @@ LOGIN_URL = '/dev/accounts/login'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_ENV_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_env')
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
 
 STATIC_ENV_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_env')
 STATICFILES_DIRS = [
