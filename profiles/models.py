@@ -9,37 +9,37 @@ User  = get_user_model()
 
 
 GENDER_CHOICES = [
-  ('Male', 'Male'),
-  ('Female', 'Female')
+  ('Мужской', 'Мужской'),
+  ('Женский', 'Женский')
 ]
 
 STATUS_CHOICES = [
-  ('Married', 'Married'),
-  ('Single', 'Single')
+  ('Замужем', 'Замужем'),
+  ('Холост', 'Холост')
 ]
 
 PROFESSION_CHOICES = [
-  ('Student or Learning', 'Student or Learning'),
-  ('Junior Developer', 'Junior Developer'),
-  ('Senior Developer', 'Senior Developer'),
-  ('Developer', 'Developer'),
-  ('Manager', 'Manager'),
-  ('Instructor or Teacher', 'Instructor or Teacher'),
-  ('Intern', 'Intern'),
-  ('ussiness Man', 'Bussiness Man'),
-  ('Digital Marketer', 'Digital Marketer'),
-  ('Data Scientist', 'Data Scientist'),
-  ('Other', 'Other')
+  ('Student or Learning', 'Студент'),
+  ('Junior Developer', 'Младший разработчик'),
+  ('Senior Developer', 'Ведущий разработчик'),
+  ('Developer', 'Разработчик'),
+  ('Manager', 'Менеджер'),
+  ('Instructor or Teacher', 'Инструктор или Учитель'),
+  ('Intern', 'Интерн'),
+  ('ussiness Man', 'Бизнесмен'),
+  ('Digital Marketer', 'Цифровой Маркетолог'),
+  ('Data Scientist', 'Ученый данных'),
+  ('Other', 'Другой')
 ]
 
 DEGREE_CHOICES = [
-  ('IT', 'Information Technologies'),
-  ('Bussiness Managment', 'Bussiness Managment'),
-  ('Digital Marketing', 'Digital Marketing'),
-  ('Computer Science', 'Computer Science'),
-  ('Civil Engineering', 'Civil Engineering'),
-  ('AI', 'Artificial & Inteligence'),
-  ('Other', 'Other')
+  ('IT', 'Информационные технологии'),
+  ('Bussiness Managment', 'Управление бизнесом'),
+  ('Digital Marketing', 'Цифровой маркетинг'),
+  ('Computer Science', 'Компьютерная наука'),
+  ('Civil Engineering', 'Гражданское строительство'),
+  ('AI', 'Искусственный и Интеллект'),
+  ('Other', 'Другой')
 ]
 
 # PROFILE MODEL MANAGER
@@ -66,7 +66,7 @@ class Profile(models.Model):
   name = models.CharField(max_length=100)
   age = models.IntegerField()
   gender = models.CharField(
-    max_length=5,
+    max_length=10,
     default=1,
     choices=GENDER_CHOICES
   )
