@@ -20,8 +20,7 @@
       <p class="mb-2 text-muted">{{profile.profession}}</p>
       <p class="text-muted">{{profile.location}}</p>
       <div class="btn-group d-block">
-        <a href="{{profile.get_experience_url}}" class="btn btn-outline-primary">ОПЫТ</a>
-        <a href="{{profile.get_education_url}}" class="btn btn-dark">ОБРАЗОВАНИЯ</a>
+        
        {% if profile.experience %}
         <a href="{{profile.get_experience_url}}" class="btn btn-outline-primary">ОПЫТ</a>
         {% else %}
