@@ -2,12 +2,12 @@
 
 {% block content %}
 <div class="education-list">
-  <header class="page-header d-flex">
+  <header class="page-header">
     <h3 class="page-heading">Образование {{edu.pk}}</h3>
     {% if user.is_authenticated and edu.profile == user.profile %}
-    <div class="btn-group">
-      <a href="{{edu.get_update_url}}" class="btn btn-outline-success">РЕДАКТИРОВАТЬ ОБРАЗОВАНИЕ</a>
-      <a href="{{edu.get_delete_url}}" class="btn btn-danger">УДАЛИТЬ ОБРАЗОВАНИЕ</a>
+    <div class="btn-group" style="display: grid;">
+      <a href="{{edu.get_update_url}}" class="btn btn-success" style="margin-bottom: 10px;">Редактировать образование</a>
+      <a href="{{edu.get_delete_url}}" class="btn btn-danger">Удалить образование</a>
     </div>
     {% endif %}
   </header>
