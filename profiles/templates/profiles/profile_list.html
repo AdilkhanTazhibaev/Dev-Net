@@ -2,8 +2,8 @@
 
 {% block content %}
 <div class="profiles-list">
-  <header class="page-header d-flex justify-content-between">
-    <h3 class="page-heading m-0">Разработчики</h3>
+  <header class="page-header">
+    <h3 class="page-heading mt-3">Разработчики</h3>
     {% if user.is_authenticated and not user.profile %}
     <a href="/dev/profiles/create/" class="btn btn-primary">
       РЕДАКТИРОВАТЬ ПРОФИЛЬ!
