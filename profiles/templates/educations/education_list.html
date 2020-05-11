@@ -2,8 +2,8 @@
 
 {% block content %}
 <div class="education-list">
-  <header class="page-header d-flex justify-content-between">
-    <h3 class="page-heading m-0">Образования</h3>
+  <header class="page-header">
+    <h3 class="page-heading mt-2">Образования</h3>
     {% if user.is_authenticated and profile.user == user %}
     <a href="{{profile.get_education_create_url}}" class="btn btn-info">СОЗДАЙТЕ ОБРАЗОВАНИЯ!</a>
     {% endif %}
