@@ -6,7 +6,7 @@
     <h3 class="page-heading">Опыт {{exp.pk}}</h3>
     {% if user.is_authenticated and exp.profile == user.profile %}
     <div class="btn-group" style="display: grid;">
-      <a href="{{exp.get_update_url}}" class="btn btn-success" style="margin-bottom: 10px;">Редактировать оыт</a>
+      <a href="{{exp.get_update_url}}" class="btn btn-success" style="margin-bottom: 10px;">Редактировать опыт</a>
       <a href="{{exp.get_delete_url}}" class="btn btn-danger">Удалить опыт</a>
     </div>
     {% endif %}
