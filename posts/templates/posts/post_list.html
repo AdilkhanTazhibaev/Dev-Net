@@ -22,10 +22,10 @@
         <p class="lead m-0">{{post.title}}</p>
         <small class="text-muted">Автор: {{post.owner}}</small>
       </div>
-      <div class="card-right">
+      <div class="card-right ml-5">
         <a href="{{post.get_like_url}}" class="btn btn-sm">Нравится {{post.like_set.all|length}}</a>
         <a href="{{post.get_unlike_url}}" class="btn btn-sm">Не нравится {{post.unlike_set.all|length}}</a>
-        <a href="{{post.get_absolute_url}}" class="btn btn-outline-primary ml-3">Читать далее
+        <a href="{{post.get_absolute_url}}" class="btn btn-primary">Читать далее
           {{post.comment_set.all|length}}</a>
       </div>
     </div>
