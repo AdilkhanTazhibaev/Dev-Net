@@ -151,7 +151,7 @@ class ProfileForm(forms.ModelForm):
 
   class Meta:
     model = Profile
-    fields = ('name', 'age', 'gender', 'status', , 'company', 'profession', 'location', 'skills', 'bio', 'image',)
+    fields = ('name', 'age', 'gender', 'status',  'company', 'profession', 'location', 'skills', 'bio', 'image',)
 
   def clean_age(self, *args, **kwargs):
     age = self.cleaned_data.get('age')
