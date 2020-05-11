@@ -23,7 +23,7 @@ class PostLikeView(LoginRequiredMixin, View):
     )
 
     if is_liked.exists():
-      messages.error(request, 'Пост уже понравился!')
+      messages.error(request, 'Сообщение уже понравился!')
       return redirect(reverse('posts:posts-list'))
     else:
       is_unliked = Unlike.objects.find_is_unliked(
@@ -34,11 +34,11 @@ class PostLikeView(LoginRequiredMixin, View):
       if is_unliked.exists():
         is_unliked.delete()
         Like.objects.create_like(self.get_object(), request.user)
-        messages.success(request, 'Пост понравился!')
+        messages.success(request, 'Сообщение понравился!')
         return redirect(reverse('posts:posts-list'))
       else:
         Like.objects.create_like(self.get_object(), request.user)
-        messages.success(request, 'Пост понравился!')
+        messages.success(request, 'Сообщение понравился!')
         return redirect(reverse('posts:posts-list'))
 
 
