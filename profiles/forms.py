@@ -9,32 +9,35 @@ GENDER_CHOICES = [
 
 STATUS_CHOICES = [
   ('Замужем', 'Замужем'),
-  ('Холост', 'Холост')
+  ('Холост', 'Холост'),
+   ('Женат', 'Женат')
 ]
 
 PROFESSION_CHOICES = [
-  ('Student or Learning', 'Студент'),
-  ('Junior Developer', 'Младший разработчик'),
-  ('Senior Developer', 'Ведущий разработчик'),
-  ('Developer', 'Разработчик'),
-  ('Manager', 'Менеджер'),
-  ('Instructor or Teacher', 'Инструктор или Учитель'),
-  ('Intern', 'Интерн'),
-  ('ussiness Man', 'Бизнесмен'),
-  ('Digital Marketer', 'Цифровой Маркетолог'),
-  ('Data Scientist', 'Ученый данных'),
-  ('Other', 'Другой')
+  ('Студент', 'Студент'),
+  ('Младший разработчик', 'Младший разработчик'),
+  ('Ведущий разработчик', 'Ведущий разработчик'),
+  ('Разработчик', 'Разработчик'),
+  ('Менеджер', 'Менеджер'),
+  ('Инструктор или Учитель', 'Инструктор или Учитель'),
+  ('Интерн', 'Интерн'),
+  ('Бизнесмен', 'Бизнесмен'),
+  ('Цифровой Маркетолог', 'Цифровой Маркетолог'),
+  ('Ученый данных', 'Ученый данных'),
+  ('Другой', 'Другой')
 ]
 
 DEGREE_CHOICES = [
   ('IT', 'Информационные технологии'),
-  ('Bussiness Managment', 'Управление бизнесом'),
-  ('Digital Marketing', 'Цифровой маркетинг'),
-  ('Computer Science', 'Компьютерная наука'),
-  ('Civil Engineering', 'Гражданское строительство'),
-  ('AI', 'Искусственный и Интеллект'),
-  ('Other', 'Другой')
+  ('Управление бизнесом', 'Управление бизнесом'),
+  ('Цифровой маркетинг', 'Цифровой маркетинг'),
+  ('Компьютерная наука', 'Компьютерная наука'),
+  ('Гражданское строительство', 'Гражданское строительство'),
+  ('Искусственный и Интеллект', 'Искусственный и Интеллект'),
+  ('Другой', 'Другой')
 ]
+
+
 
 
 class ProfileForm(forms.ModelForm):
@@ -74,15 +77,7 @@ class ProfileForm(forms.ModelForm):
     )
   )
 
-  website = forms.URLField(
-    required=False,
-    widget=forms.URLInput(
-      attrs={
-        'class': 'form-control form-control-lg',
-        'placeholder': 'Сайт'
-      }
-    )
-  )
+ 
 
   company = forms.CharField(
     required=False,
@@ -147,7 +142,7 @@ class ProfileForm(forms.ModelForm):
     self.fields['age'].label = "Возраст"
     self.fields['gender'].label = "Пол"
     self.fields['status'].label = "Семейное положение"
-    self.fields['company'].label = "Сайт"
+    self.fields['company'].label = "Компания"
     self.fields['profession'].label = "Профессия"
     self.fields['location'].label = "Место проживания"
     self.fields['skills'].label = "Навык"
@@ -156,7 +151,7 @@ class ProfileForm(forms.ModelForm):
 
   class Meta:
     model = Profile
-    fields = ('name', 'age', 'gender', 'status', 'website', 'company', 'profession', 'location', 'skills', 'bio', 'image',)
+    fields = ('name', 'age', 'gender', 'status', , 'company', 'profession', 'location', 'skills', 'bio', 'image',)
 
   def clean_age(self, *args, **kwargs):
     age = self.cleaned_data.get('age')
